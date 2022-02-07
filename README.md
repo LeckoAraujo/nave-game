@@ -7,3 +7,4 @@ Primeiro jogo de nave
 - HTML
 - CSS
 - JavaScript
+- JQuery
