@@ -19,6 +19,7 @@ body {
 	position:relative;
 	margin-left:auto;
 	margin-right:auto;
+	overflow: hidden;
 }
 
 
@@ -28,6 +29,8 @@ body {
 	background-image:url(../imgs/fundo_game.jpg);
 	border-color:#FFF;
 	border-style:solid;
+	border-left: 0;
+	border-right: 0;
 }
 
 #jogador {
