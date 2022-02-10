@@ -12,6 +12,17 @@ function start() { // Inicio da função start()
 
     //Principais variáveis do jogo
 	
+	var somDisparo=document.getElementById("somDisparo");
+	var somExplosao=document.getElementById("somExplosao");
+	var musica=document.getElementById("musica");
+	var somGameover=document.getElementById("somGameover");
+	var somPerdido=document.getElementById("somPerdido");
+	var somResgate=document.getElementById("somResgate");
+
+	//Música em loop
+	musica.addEventListener("ended", function(){ musica.currentTime = 0; musica.play(); }, false);
+	musica.play();
+
 	var podeAtirar=true;
 	var fimdejogo=false;
 	var jogo = {}
@@ -144,6 +155,7 @@ function start() { // Inicio da função start()
 	
 		if (podeAtirar==true) {
 			
+			somDisparo.play();
 			podeAtirar=false;
 			
 			topo = parseInt($("#jogador").css("top"))
@@ -192,6 +204,7 @@ function start() { // Inicio da função start()
 		// jogador com o inimigo1
 		if (colisao1.length>0) {
 			
+			somExplosao.play();
 			energiaAtual--;
 			inimigo1X = parseInt($("#inimigo1").css("left"));
 			inimigo1Y = parseInt($("#inimigo1").css("top"));
@@ -205,6 +218,7 @@ function start() { // Inicio da função start()
 		// jogador com o inimigo2 
 		if (colisao2.length>0) {
 	
+			somExplosao.play();
 			energiaAtual--;
 			inimigo2X = parseInt($("#inimigo2").css("left"));
 			inimigo2Y = parseInt($("#inimigo2").css("top"));
@@ -218,6 +232,7 @@ function start() { // Inicio da função start()
 		// Disparo com o inimigo1
 		if (colisao3.length>0) {
 			
+			somExplosao.play();
 			velocidade=velocidade+0.3;
 			pontos=pontos+100;
 			inimigo1X = parseInt($("#inimigo1").css("left"));
@@ -234,6 +249,7 @@ function start() { // Inicio da função start()
 		// Disparo com o inimigo2
 		if (colisao4.length>0) {
 			
+			somExplosao.play();
 			pontos=pontos+50;
 			inimigo2X = parseInt($("#inimigo2").css("left"));
 			inimigo2Y = parseInt($("#inimigo2").css("top"));
@@ -248,6 +264,7 @@ function start() { // Inicio da função start()
 		// jogador com o amigo
 		if (colisao5.length>0) {
 		
+			somResgate.play();
 			salvos++;
 			reposicionaAmigo();
 			$("#amigo").remove();
@@ -256,6 +273,7 @@ function start() { // Inicio da função start()
 		//Inimigo2 com o amigo
 		if (colisao6.length>0) {
 			
+			somPerdido.play();
 			perdidos++;
 			amigoX = parseInt($("#amigo").css("left"));
 			amigoY = parseInt($("#amigo").css("top"));
