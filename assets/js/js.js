@@ -18,7 +18,7 @@ function start() { // Inicio da função start()
 	var TECLA = {
 		UP: 38,
 		DOWN: 40,
-		SPACE: 27
+		SPACE: 32
 		}
 	
 	jogo.pressionou = [];
