@@ -18,7 +18,7 @@ function start() { // Inicio da função start()
 	var TECLA = {
 		UP: 38,
 		DOWN: 40,
-		RIGHT: 39
+		SPACE: 27
 		}
 	
 	jogo.pressionou = [];
@@ -82,7 +82,7 @@ function start() { // Inicio da função start()
 			}
 		}
 		
-		if (jogo.pressionou[TECLA.RIGHT]) {
+		if (jogo.pressionou[TECLA.SPACE]) {
 			
 			//Chama função Disparo
 			disparo();
