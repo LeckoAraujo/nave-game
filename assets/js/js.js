@@ -65,12 +65,28 @@ function start() { // Inicio da função start()
 	colisao();
 	placar();
 	energia();
+	trocaFundo();
 	
 	} // Fim da função loop()
 
+	//Troca o fundo das fases
+	function trocaFundo() {
+
+		if(pontos < 5000) {
+			$("#fundoGame").css("background-image", "url(assets/imgs/fundo_game.jpg)");
+		} else if(pontos >= 5001 && pontos <= 9999 ){
+			$("#fundoGame").css("background-image", "url(assets/imgs/fundo_game2.jpg)");
+		} else if(pontos >= 10000 && pontos <= 14999){
+			$("#fundoGame").css("background-image", "url(assets/imgs/fundo_game3.jpg)");
+		} else if(pontos >= 15000 && pontos <= 19999){
+			$("#fundoGame").css("background-image", "url(assets/imgs/fundo_game4.jpg)");
+		} else if(pontos >= 20000){
+			$("#fundoGame").css("background-image", "url(assets/imgs/fundo_game5.jpg)");
+		}
+
+	}
 
     //Função que movimenta o fundo do jogo
-	
 	function movefundo() {
 	
         esquerda = parseInt($("#fundoGame").css("background-position"));
